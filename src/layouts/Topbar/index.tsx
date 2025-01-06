@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { showRightSidebar, changeSidebarType } from 'redux/actions';
@@ -83,7 +84,7 @@ const Topbar = ({ hideLogo, navCssClasses, openLeftMenuCallBack, topbarDark }: T
                 )}
 
                 <ul className="list-unstyled topbar-menu float-end mb-0">
-                    <li className="notification-list topbar-dropdown d-xl-none">
+                    {/* <li className="notification-list topbar-dropdown d-xl-none">
                         <SearchDropdown />
                     </li>
                     <li className="dropdown notification-list topbar-dropdown">
@@ -94,21 +95,21 @@ const Topbar = ({ hideLogo, navCssClasses, openLeftMenuCallBack, topbarDark }: T
                     </li>
                     <li className="dropdown notification-list d-none d-sm-inline-block">
                         <AppsDropdown />
-                    </li>
-                    <li className="notification-list">
+                    </li> */}
+                    {/* <li className="notification-list">
                         <button
                             className="nav-link dropdown-toggle end-bar-toggle arrow-none btn btn-link shadow-none"
                             onClick={handleRightSideBar}
                         >
                             <i className="dripicons-gear noti-icon"></i>
                         </button>
-                    </li>
+                    </li> */}
                     <li className="dropdown notification-list">
                         <ProfileDropdown
                             userImage={userImage}
                             menuItems={profileMenus}
-                            username={'Dominic Keller'}
-                            userTitle={'Founder'}
+                            username={'Admin'}
+                            userTitle={'My Kratu'}
                         />
                     </li>
                 </ul>
@@ -116,10 +117,10 @@ const Topbar = ({ hideLogo, navCssClasses, openLeftMenuCallBack, topbarDark }: T
                 {/* toggle for vertical layout */}
                 {(layoutType === layoutConstants.LayoutTypes.LAYOUT_VERTICAL ||
                     layoutType === layoutConstants.LayoutTypes.LAYOUT_FULL) && (
-                    <button className="button-menu-mobile open-left" onClick={handleLeftMenuCallBack}>
-                        <i className="mdi mdi-menu" />
-                    </button>
-                )}
+                        <button className="button-menu-mobile open-left" onClick={handleLeftMenuCallBack}>
+                            <i className="mdi mdi-menu" />
+                        </button>
+                    )}
 
                 {/* toggle for horizontal layout */}
                 {layoutType === layoutConstants.LayoutTypes.LAYOUT_HORIZONTAL && (
@@ -146,7 +147,7 @@ const Topbar = ({ hideLogo, navCssClasses, openLeftMenuCallBack, topbarDark }: T
                         </div>
                     </Link>
                 )}
-                <TopbarSearch options={searchOptions} />
+                {/* <TopbarSearch options={searchOptions} /> */}
             </div>
         </div>
     );

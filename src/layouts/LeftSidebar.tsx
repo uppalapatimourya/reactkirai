@@ -27,8 +27,8 @@ const SideBarContent = ({ hideUserProfile }: SideBarContentProps) => {
                 </div>
             )}
             <AppMenu menuItems={getMenuItems()} />
-
-            <div
+            {/* Premium version Notification */}
+            {/* <div
                 className={classNames('help-box', 'text-center', {
                     'text-white': hideUserProfile,
                 })}
@@ -49,7 +49,7 @@ const SideBarContent = ({ hideUserProfile }: SideBarContentProps) => {
                 >
                     Upgrade
                 </button>
-            </div>
+            </div> */}
             <div className="clearfix" />
         </>
     );

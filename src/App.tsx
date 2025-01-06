@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Routes from 'routes/Routes';
-import { configureFakeBackend } from 'helpers';
+// import { configureFakeBackend } from 'helpers';
 
 // For Default import Saas.scss
 import 'assets/scss/Saas.scss';
@@ -8,7 +8,7 @@ import 'assets/scss/Saas.scss';
 // import 'assets/scss/Modern.scss';
 
 const App = () => {
-    configureFakeBackend();
+    // configureFakeBackend();
     return <Routes />;
 };
 
