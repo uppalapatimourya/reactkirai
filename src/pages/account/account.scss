@@ -1,0 +1,13 @@
+/* CSS */
+.vertical-form-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Initially, one column for mobile screens */
+    grid-gap: 1rem;
+}
+
+/* Media query for desktop screens */
+@media (min-width: 768px) {
+    .vertical-form-container {
+        grid-template-columns: 1fr 1fr; /* Two columns for desktop screens */
+    }
+}
