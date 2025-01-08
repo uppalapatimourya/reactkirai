@@ -1,6 +1,6 @@
-import { Customer, Order, Product, Seller } from './types';
+import { Customer, Order, Seller } from './types';
 
-const products: Product[] = [
+const products: any[] = [
     {
         id: 1,
         name: '2500 Club Coupe',

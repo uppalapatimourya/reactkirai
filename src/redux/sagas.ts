@@ -3,7 +3,8 @@ import authSaga from './auth/saga';
 import customerSaga from './customers/saga';
 import layoutSaga from './layout/saga';
 import userSaga from './users/saga';
+import productSaga from './products/saga';
 
 export default function* rootSaga() {
-    yield all([authSaga(), layoutSaga(), userSaga(), customerSaga()]);
+    yield all([authSaga(), layoutSaga(), userSaga(), customerSaga(),productSaga()]);
 }

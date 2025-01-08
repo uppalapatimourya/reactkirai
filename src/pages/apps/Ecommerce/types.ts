@@ -1,14 +1,30 @@
-export type Product = {
+export interface ProductTeir {
     id: number;
-    name: string;
-    category: string;
-    image: string;
-    added_date: string;
-    rating: number;
-    price: number;
+    tierType: string;
+    actualPrice: number;
+    discountPer: number;
+    itemsIncluded: string[];
+    productId: string;
+    priceWithDiscount: number;
+    inCart: boolean;
     quantity: number;
-    status: boolean;
-};
+}
+
+export interface Product {
+    id: string;
+    title: string;
+    description: string;
+    sku: string;
+    category: string;
+    isPremium: boolean;
+    thumbnailUrl: string;
+    isActive: boolean;
+    price: number;
+    tiers: ProductTeir[];
+    reviewCount: number;
+    averageRating: number;
+    isFavorite: boolean;
+}
 
 export type Order = {
     id: number;

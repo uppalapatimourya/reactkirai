@@ -95,7 +95,7 @@ const Table = <TableValues extends object = {}>(props: TableProps<TableValues>) 
     const isSelectable = props['isSelectable'] || false;
     const isExpandable = props['isExpandable'] || false;
     const sizePerPageList = props['sizePerPageList'] || [];
-
+    console.log(props['data']);
     let otherProps: any = {};
 
     if (isSearchable) {
@@ -117,7 +117,7 @@ const Table = <TableValues extends object = {}>(props: TableProps<TableValues>) 
     const dataTable = useTable(
         {
             columns: props['columns'],
-            data: props['data'],
+            data: props['data'] ?? [],
             initialState: { pageSize: props['pageSize'] || 10 },
         },
 
@@ -172,8 +172,7 @@ const Table = <TableValues extends object = {}>(props: TableProps<TableValues>) 
                                             // of the row
                                             paddingLeft: `${row.depth * 2}rem`,
                                         },
-                                    })}
-                                >
+                                    })}>
                                     {row.isExpanded ? '-' : '+'}
                                 </span>
                             ) : null,
@@ -199,8 +198,7 @@ const Table = <TableValues extends object = {}>(props: TableProps<TableValues>) 
             <div className="table-responsive">
                 <table
                     {...dataTable.getTableProps()}
-                    className={classNames('table table-centered react-table', props['tableClass'])}
-                >
+                    className={classNames('table table-centered react-table', props['tableClass'])}>
                     <thead className={props['theadClass']}>
                         {dataTable.headerGroups.map((headerGroup) => (
                             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -213,8 +211,7 @@ const Table = <TableValues extends object = {}>(props: TableProps<TableValues>) 
                                             sorting_desc: column.isSortedDesc === true,
                                             sorting_asc: column.isSortedDesc === false,
                                             sortable: column.defaultCanSort === true,
-                                        })}
-                                    >
+                                        })}>
                                         {column.render('Header')}
                                     </th>
                                 ))}

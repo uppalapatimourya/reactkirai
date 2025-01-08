@@ -239,7 +239,7 @@ const AllRoutes = () => {
         {
             // auth protected routes
             path: '/',
-            element: <PrivateRoute roles={'Admin'} component={Layout} />,
+            element: <PrivateRoute component={Layout} />,
             children: [
                 {
                     path: 'dashboard',

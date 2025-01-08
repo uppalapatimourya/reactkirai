@@ -3,10 +3,12 @@ import Auth from './auth/reducers';
 import Customer from './customers/reducers';
 import Layout from './layout/reducers';
 import User from './users/reducers';
+import Products from './products/reducers';
 
 export default combineReducers({
     Auth,
     Layout,
     User,
     Customer,
+    Products
 });
