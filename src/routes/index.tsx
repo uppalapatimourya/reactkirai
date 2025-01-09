@@ -25,7 +25,7 @@ const CustomersList = React.lazy(() => import('pages/apps/Custom/Customers/Custo
 const CustomerDetails = React.lazy(() => import('pages/apps/Custom/Customers/CustomerDetails'));
 
 
-const Login = React.lazy(() => import('pages/account/Login2'));
+const Login = React.lazy(() => import('pages/account/Login'));
 const Logout2 = React.lazy(() => import('pages/account/Logout2'));
 const Register2 = React.lazy(() => import('pages/account/Register2'));
 const Confirm2 = React.lazy(() => import('pages/account/Confirm2'));
@@ -315,12 +315,22 @@ const AllRoutes = () => {
                             ],
                         },
                         {
-                            path: 'ecommerce',
+                            path: 'products',
+                            element: <LoadComponent component={EcommerceProducts} />,
                             children: [
                                 {
-                                    path: 'products',
-                                    element: <LoadComponent component={EcommerceProducts} />,
+                                    path: 'details',
+                                    element: <LoadComponent component={ProductDetails} />,
                                 },
+                            ]
+                        },
+                        {
+                            path: 'ecommerce',
+                            children: [
+                                // {
+                                //     path: 'products',
+                                //     element: <LoadComponent component={EcommerceProducts} />,
+                                // },
                                 {
                                     path: 'details',
                                     element: <LoadComponent component={ProductDetails} />,

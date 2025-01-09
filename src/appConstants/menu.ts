@@ -49,7 +49,30 @@ const MENU_ITEMS: MenuItemType[] = [
             },
         ],
     },
-    { key: 'apps', label: 'Apps', isTitle: true },
+    { key: 'apps', label: 'Products, Services & Events', isTitle: true },
+    {
+        key: 'apps-products',
+        label: 'Products',
+        isTitle: false,
+        icon: 'uil-cart',
+        url: '/apps/products',
+    },
+    {
+        key: 'apps-services',
+        label: 'Services',
+        isTitle: false,
+        icon: 'uil-coins',
+        url: '/apps/services',
+    },
+    {
+        key: 'apps-events',
+        label: 'Events',
+        isTitle: false,
+        icon: 'uil-cloud',
+        url: '/apps/events',
+    },
+    // { key: 'apps', label: 'User/Customer Management', isTitle: true },
+
     {
         key: 'apps-users',
         label: 'User Management',
@@ -68,7 +91,7 @@ const MENU_ITEMS: MenuItemType[] = [
         key: 'apps-customers',
         label: 'Customers',
         isTitle: false,
-        icon: 'uil-user',
+        icon: 'uil-users-alt',
         children: [
             {
                 key: 'ds-customers',
@@ -131,18 +154,19 @@ const MENU_ITEMS: MenuItemType[] = [
     //         },
     //     ],
     // },
+    { key: 'apps', label: 'Order Management', isTitle: true },
     {
         key: 'apps-ecommerce',
         label: 'Ecommerce',
         isTitle: false,
         icon: 'uil-store',
         children: [
-            {
-                key: 'ecommerce-products',
-                label: 'Products',
-                url: '/apps/ecommerce/products',
-                parentKey: 'apps-ecommerce',
-            },
+            // {
+            //     key: 'ecommerce-products',
+            //     label: 'Products',
+            //     url: '/apps/ecommerce/products',
+            //     parentKey: 'apps-ecommerce',
+            // },
             {
                 key: 'ecommerce-details',
                 label: 'Products Details',
