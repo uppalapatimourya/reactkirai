@@ -64,7 +64,8 @@ const Customers = React.lazy(() => import('pages/apps/Ecommerce/Customers'));
 const Cart = React.lazy(() => import('pages/apps/Ecommerce/Cart'));
 const Checkout = React.lazy(() => import('pages/apps/Ecommerce/Checkout/'));
 const Sellers = React.lazy(() => import('pages/apps/Ecommerce/Sellers'));
-
+// - services
+const Services = React.lazy(()=>import('pages/apps/Services/Services'))
 // - email
 const Inbox = React.lazy(() => import('pages/apps/Email/Inbox'));
 const EmailDetail = React.lazy(() => import('pages/apps/Email/Detail'));
@@ -316,8 +317,24 @@ const AllRoutes = () => {
                         },
                         {
                             path: 'products',
-                            element: <LoadComponent component={EcommerceProducts} />,
                             children: [
+                                {
+                                    path: '',
+                                    element: <LoadComponent component={EcommerceProducts} />,
+                                },
+                                {
+                                    path: 'details',
+                                    element: <LoadComponent component={ProductDetails} />,
+                                },
+                            ]
+                        },
+                        {
+                            path: 'services',
+                            children: [
+                                {
+                                    path: '',
+                                    element: <LoadComponent component={Services} />,
+                                },
                                 {
                                     path: 'details',
                                     element: <LoadComponent component={ProductDetails} />,

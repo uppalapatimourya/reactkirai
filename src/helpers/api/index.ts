@@ -1,6 +1,7 @@
 import { login, logout, signup, forgotPassword, forgotPasswordConfirm } from './auth';
 import { getAllUsers, updateUserDetails, addUser, deleteUserByIdApi } from './user';
 import { getProducts } from './products';
+import { getServices } from './services';
 
 export {
     login,
@@ -13,4 +14,5 @@ export {
     addUser,
     deleteUserByIdApi,
     getProducts,
+    getServices
 };

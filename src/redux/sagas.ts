@@ -4,7 +4,7 @@ import customerSaga from './customers/saga';
 import layoutSaga from './layout/saga';
 import userSaga from './users/saga';
 import productSaga from './products/saga';
-
+import serviceSaga from './services/saga';
 export default function* rootSaga() {
-    yield all([authSaga(), layoutSaga(), userSaga(), customerSaga(),productSaga()]);
+    yield all([authSaga(), layoutSaga(), userSaga(), customerSaga(), productSaga(), serviceSaga()]);
 }
