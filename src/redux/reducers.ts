@@ -5,6 +5,7 @@ import Layout from './layout/reducers';
 import User from './users/reducers';
 import Products from './products/reducers';
 import Services from './services/reducers';
+import Events from './events/reducers';
 
 export default combineReducers({
     Auth,
@@ -12,5 +13,6 @@ export default combineReducers({
     User,
     Customer,
     Products,
-    Services
+    Services,
+    Events
 });
