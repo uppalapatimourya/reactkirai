@@ -24,6 +24,14 @@ export interface Product {
     reviewCount: number;
     averageRating: number;
     isFavorite: boolean;
+    media: MediaItem[];
+}
+
+interface MediaItem {
+    name?: string;
+    url: string;
+    mediaType: string;
+    isPrimary: boolean;
 }
 
 export type Order = {

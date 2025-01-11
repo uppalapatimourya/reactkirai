@@ -5,7 +5,7 @@ export type ProductActionType = {
         | ProductActionTypes.API_RESPONSE_SUCCESS
         | ProductActionTypes.API_RESPONSE_ERROR
         | ProductActionTypes.GET_PRODUCTS
-        | ProductActionTypes.RESET;
+        | ProductActionTypes.ADD_PRODUCT;
     payload: {} | string;
 };
 
@@ -48,7 +48,12 @@ export const productApiResponseError = (actionType: string, error: string): Prod
     payload: { actionType, error },
 });
 
-export const getProducts = (params:any): ProductActionType => ({
+export const getProducts = (params: any): ProductActionType => ({
     type: ProductActionTypes.GET_PRODUCTS,
+    payload: params,
+});
+
+export const addProduct = (params: any): ProductActionType => ({
+    type: ProductActionTypes.ADD_PRODUCT,
     payload: params,
 });

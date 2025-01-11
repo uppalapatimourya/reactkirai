@@ -6,10 +6,19 @@ import { Product } from '../types';
 export default function useProductDetails() {
     const { dispatch, appSelector } = useRedux();
     const [selectedProductImg, setSelectedProductImg] = useState<string>(productImg1);
-    const { products, totalRecords }: { products: Product[]; totalRecords: number } = appSelector((state: any) => ({
-        products: state.Products.results,
-        totalRecords: state.Products.totalRecords,
-    }));
+    const {
+        products,
+        totalRecords,
+        createdProduct,
+        isProductCreated,
+    }: { products: Product[]; totalRecords: number; createdProduct: Product; isProductCreated: boolean } = appSelector(
+        (state: any) => ({
+            products: state.Products.results,
+            totalRecords: state.Products.totalRecords,
+            createdProduct: state.Products.createdProduct,
+            isProductCreated: state.Products.isProductCreated,
+        })
+    );
     /**
      * Handles the image changes
      */
@@ -19,5 +28,5 @@ export default function useProductDetails() {
         return false;
     };
 
-    return { selectedProductImg, handleImgChange, products, totalRecords, dispatch };
+    return { selectedProductImg, handleImgChange, products, totalRecords, dispatch, createdProduct, isProductCreated };
 }

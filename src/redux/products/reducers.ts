@@ -5,6 +5,8 @@ const INIT_STATE = {
     products: {
         results: [],
     },
+    createdProduct: {},
+    isProductCreated: false,
 };
 
 type ProductActionType = {
@@ -12,7 +14,7 @@ type ProductActionType = {
         | ProductActionTypes.API_RESPONSE_SUCCESS
         | ProductActionTypes.API_RESPONSE_ERROR
         | ProductActionTypes.GET_PRODUCTS
-        | ProductActionTypes.RESET;
+        | ProductActionTypes.ADD_PRODUCT;
     payload: {
         actionType?: string;
         data?: Product[] | {};
@@ -35,6 +37,13 @@ const Products = (state: State = INIT_STATE, action: ProductActionType) => {
                         results: action.payload.data, // Updating results
                     };
                 }
+                case ProductActionTypes.ADD_PRODUCT: {
+                    return {
+                        ...state,
+                        createdProduct: action.payload.data, // Updating results
+                        isProductCreated: true,
+                    };
+                }
                 default:
                     return { ...state };
             }
@@ -47,16 +56,20 @@ const Products = (state: State = INIT_STATE, action: ProductActionType) => {
                         error: action.payload.error,
                     };
                 }
+                case ProductActionTypes.ADD_PRODUCT: {
+                    return {
+                        ...state,
+                        isProductCreated: false,
+                    };
+                }
                 default:
                     return { ...state };
             }
 
         case ProductActionTypes.GET_PRODUCTS:
-            return { ...state, loading: true, userLoggedIn: false };
-        case ProductActionTypes.RESET:
-            return {
-                ...state,
-            };
+            return { ...state, loading: true };
+        case ProductActionTypes.ADD_PRODUCT:
+            return { ...state, loading: true };
         default:
             return { ...state };
     }

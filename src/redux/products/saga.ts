@@ -1,7 +1,7 @@
 import { all, fork, put, takeEvery, call } from 'redux-saga/effects';
 import { SagaIterator } from '@redux-saga/core';
 // import { APICore, AUTH_SESSION_KEY, setAuthorization } from 'helpers/api/apiCore';
-import { getProducts as getProductsApi } from 'helpers';
+import { getProducts as getProductsApi, addProduct as addProductApi } from 'helpers';
 import { productApiResponseSuccess, productApiResponseError } from './actions';
 import { ProductActionTypes } from './constants';
 
@@ -35,12 +35,28 @@ function* getProducts({ payload: { limit, page, customerId } }: any): SagaIterat
     }
 }
 
+function* addProduct({ payload: { productDetails } }: any): SagaIterator {
+    try {
+        console.log('productDetails', productDetails);
+        const response = yield call(addProductApi, { ...productDetails });
+        const createdProduct = response?.data;
+        yield put(productApiResponseSuccess(ProductActionTypes.ADD_PRODUCT, createdProduct));
+    } catch (error: any) {
+        console.log('coming here err', error);
+        yield put(productApiResponseError(ProductActionTypes.ADD_PRODUCT, error));
+    }
+}
+
 export function* watchGetProducts() {
     yield takeEvery(ProductActionTypes.GET_PRODUCTS, getProducts);
 }
 
+export function* watchAddProduct() {
+    yield takeEvery(ProductActionTypes.ADD_PRODUCT, addProduct);
+}
+
 function* productSaga() {
-    yield all([fork(watchGetProducts)]);
+    yield all([fork(watchGetProducts), fork(watchAddProduct)]);
 }
 
 export default productSaga;

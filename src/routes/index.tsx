@@ -24,7 +24,6 @@ const UserDetails = React.lazy(() => import('pages/apps/Custom/UserMangement/Use
 const CustomersList = React.lazy(() => import('pages/apps/Custom/Customers/CustomersList'));
 const CustomerDetails = React.lazy(() => import('pages/apps/Custom/Customers/CustomerDetails'));
 
-
 const Login = React.lazy(() => import('pages/account/Login'));
 const Logout2 = React.lazy(() => import('pages/account/Logout2'));
 const Register2 = React.lazy(() => import('pages/account/Register2'));
@@ -58,6 +57,7 @@ const CRMOrderList = React.lazy(() => import('pages/apps/CRM/OrderList'));
 // - ecommece pages
 const EcommerceProducts = React.lazy(() => import('pages/apps/Ecommerce/Products'));
 const ProductDetails = React.lazy(() => import('pages/apps/Ecommerce/ProductDetails'));
+const AddProduct = React.lazy(() => import('pages/apps/Ecommerce/AddProducts'));
 const Orders = React.lazy(() => import('pages/apps/Ecommerce/Orders'));
 const OrderDetails = React.lazy(() => import('pages/apps/Ecommerce/OrderDetails'));
 const Customers = React.lazy(() => import('pages/apps/Ecommerce/Customers'));
@@ -65,9 +65,9 @@ const Cart = React.lazy(() => import('pages/apps/Ecommerce/Cart'));
 const Checkout = React.lazy(() => import('pages/apps/Ecommerce/Checkout/'));
 const Sellers = React.lazy(() => import('pages/apps/Ecommerce/Sellers'));
 // - services
-const Services = React.lazy(()=>import('pages/apps/Services/Services'))
+const Services = React.lazy(() => import('pages/apps/Services/Services'));
 // - events
-const Events = React.lazy(()=>import('pages/apps/Events/Events'))
+const Events = React.lazy(() => import('pages/apps/Events/Events'));
 // - email
 const Inbox = React.lazy(() => import('pages/apps/Email/Inbox'));
 const EmailDetail = React.lazy(() => import('pages/apps/Email/Detail'));
@@ -328,7 +328,11 @@ const AllRoutes = () => {
                                     path: 'details',
                                     element: <LoadComponent component={ProductDetails} />,
                                 },
-                            ]
+                                {
+                                    path: 'addProduct',
+                                    element: <LoadComponent component={AddProduct} />,
+                                },
+                            ],
                         },
                         {
                             path: 'services',
@@ -341,7 +345,7 @@ const AllRoutes = () => {
                                     path: 'details',
                                     element: <LoadComponent component={ProductDetails} />,
                                 },
-                            ]
+                            ],
                         },
                         {
                             path: 'EVENTS',
@@ -354,7 +358,7 @@ const AllRoutes = () => {
                                     path: 'details',
                                     element: <LoadComponent component={ProductDetails} />,
                                 },
-                            ]
+                            ],
                         },
                         {
                             path: 'ecommerce',

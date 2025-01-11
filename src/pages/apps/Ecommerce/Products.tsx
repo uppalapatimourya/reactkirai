@@ -116,7 +116,7 @@ const Products = () => {
                         <Card.Body>
                             <Row className="mb-2">
                                 <Col sm={5}>
-                                    <Link to="#" className="btn btn-danger mb-2">
+                                    <Link to="/apps/products/addProduct" className="btn btn-danger mb-2">
                                         <i className="mdi mdi-plus-circle me-2"></i> Add Products
                                     </Link>
                                 </Col>

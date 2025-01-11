@@ -25,10 +25,7 @@ const FileUploader = ({ showPreview = true, onFileUpload }: FileUploaderProps) =
                             <input {...getInputProps()} />
                             <i className="h3 text-muted dripicons-cloud-upload"></i>
                             <h5>Drop files here or click to upload.</h5>
-                            <span className="text-muted font-13">
-                                (This is just a demo dropzone. Selected files are <strong>not</strong> actually
-                                uploaded.)
-                            </span>
+                            <span className="text-muted font-13">(Drag and Drop Product images)</span>
                         </div>
                     </div>
                 )}
