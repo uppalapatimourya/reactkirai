@@ -39,7 +39,7 @@ const AccountLayout = ({ bottomLinks, children }: AccountLayoutProps) => {
                     </Row>
                 </Container>
             </div>
-            <footer className="footer footer-alt">{t(` ${new Date().getFullYear()} ©mykratu`)}</footer>
+            <footer className="footer footer-alt">{t(` ${new Date().getFullYear()} ©kiraiLetter`)}</footer>
         </>
     );
 };

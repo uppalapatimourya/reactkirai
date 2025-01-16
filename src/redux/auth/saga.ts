@@ -31,9 +31,40 @@ const api = new APICore();
  * @param {*} payload - username and password
  */
 function* login({ payload: { username, password }, type }: UserData): SagaIterator {
+    //Mock user
+    let response = {
+        data: {
+            user: {
+                id: 1,
+                email: 'admin@gmail.com',
+                firstname: 'Mourya',
+                middlename: null,
+                lastname: 'Prasad',
+                role: 'APP_ADMIN',
+                gender: 'MALE',
+                dob: '2024-12-03T18:30:00.000Z',
+                isEmailVerified: false,
+                phone: null,
+                username: 'admin@gmail.com',
+                userType: 'CONTACT',
+                isActive: true,
+                deleted: false,
+            },
+            tokens: {
+                access: {
+                    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTczNjk5OTgwNSwiZW50aXR5VHlwZSI6InVzZXIiLCJ0eXBlIjoiQUNDRVNTIiwiZXhwIjoxNzM3MDAzNDA1fQ.VPr_WE0qXD4zTRQJNt9aSCYcMFPWxRnX--u2a1nEfNg',
+                    expires: '2025-01-19T03:56:45.601Z',
+                },
+                refresh: {
+                    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTczNjk5OTgwNSwiZW50aXR5VHlwZSI6InVzZXIiLCJ0eXBlIjoiUkVGUkVTSCIsImV4cCI6MTczNzAwMzQwNX0.ckS4Ey8rjOSsp3xSBeiU88VmarnF7pxz1N0luh3nZTs',
+                    expires: '2025-02-15T03:56:45.606Z',
+                },
+            },
+        }
+    }
     try {
-        const response = yield call(loginApi, { email: username, password });
-        const user = response.data?.user;
+        // response = yield call(loginApi, { email: username, password });
+        const user:any = response.data?.user;
         user.token = response.data?.tokens.access?.token;
         api.setLoggedInUser(user);
         setAuthorization(user['token']);

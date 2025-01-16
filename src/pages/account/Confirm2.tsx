@@ -8,7 +8,7 @@ const BottomLink = () => {
 
     return (
         <footer className="footer footer-alt">
-            <p className="text-muted">{t(` ${new Date().getFullYear()} ©mykratu`)}</p>
+            <p className="text-muted">{t(` ${new Date().getFullYear()} ©kiraiLetter`)}</p>
         </footer>
     );
 };

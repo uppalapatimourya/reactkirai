@@ -16,7 +16,7 @@ const Confirm = React.lazy(() => import('pages/account/Confirm'));
 const ForgetPassword = React.lazy(() => import('pages/account/ForgetPassword'));
 const LockScreen = React.lazy(() => import('pages/account/LockScreen'));
 
-//Apps mykratu
+//Apps kiraiLetter
 //Users
 const Users = React.lazy(() => import('pages/apps/Custom/UserMangement/Users'));
 const UserDetails = React.lazy(() => import('pages/apps/Custom/UserMangement/UserDetails'));

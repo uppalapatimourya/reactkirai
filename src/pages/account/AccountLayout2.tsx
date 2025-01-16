@@ -54,7 +54,7 @@ const AccountLayout2 = ({ bottomLinks, children }: AccountLayoutProps) => {
                         )}
                         <i className="mdi mdi-format-quote-close"></i>
                     </p>
-                    <p>{t('- mykratu Admin User')}</p>
+                    <p>{t('- kiraiLetter Admin User')}</p>
                 </div>
             </div>
         </div>
